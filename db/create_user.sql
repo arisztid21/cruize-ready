@@ -1,0 +1,1 @@
+insert into users(email, username, password, phone_number) values($1, $2, $3, $4) returning *;
