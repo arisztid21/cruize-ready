@@ -44,3 +44,5 @@ select * from categories;
 
 select p.item, c.name from posts p join categories c on p.category = c.id;
 
+--http://localhost:4000/posts/search?category=4&item=siren&part_year=1945
+

@@ -73,7 +73,7 @@ app.post(`/posts`, c.createPost);
 
 app.get(`/posts`, c.getAllPosts);
 
-
+app.get(`/posts/search`, c.getSearchResults);
 
 
 

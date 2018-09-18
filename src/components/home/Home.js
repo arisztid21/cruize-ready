@@ -17,10 +17,11 @@ class Home extends Component {
     })
   }
   render() {
+    console.log(this.state.posts[0] ? this.state.posts[0].images : 'not loaded')
     const posts = this.state.posts.map(post => {
-      return <div>
+      return <div key = {post.id}>
         <div>{post.item}</div>
-        <img src={post.images}/>
+        <img src={post.images ? post.images : 'no image found'}/>
         {/* <div>{post.description}</div> */}
         <div>${post.price}</div>
         <div>{post.time_posted}</div>
