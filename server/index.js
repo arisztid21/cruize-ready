@@ -6,6 +6,7 @@ const bcrypt = require('bcryptjs');
 const massive = require('massive');
 const app = express();
 const c = require('./controller');
+const path = require('path')
 const saltRounds = 13;
 
 app.use(bodyParser.json());
@@ -90,7 +91,9 @@ app.get(`/posts/search`, c.getSearchResults);
 
 
 
-  
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
 const port = 4000;
 app.listen(port, ()=>console.log(`server listening on port ${port}`))
