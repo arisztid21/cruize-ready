@@ -1,0 +1,1 @@
+delete from posts where id= $1 and seller_id = $2;

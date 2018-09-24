@@ -76,9 +76,9 @@ app.get(`/posts`, c.getAllPosts);
 
 app.get(`/posts/search`, c.getSearchResults);
 
+app.patch(`/posts/:id`, c.updatePost);
 
-
-
+app.delete(`/posts/delete/:id`, c.deletePost);  
 
 
 

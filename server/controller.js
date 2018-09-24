@@ -4,7 +4,7 @@ module.exports={
         const db = req.app.get('db');
         const time_posted = new Date().toUTCString().split(' ').splice(1, 4).join(' ');
         const {images, item, beginning_year, ending_year, description, price, category} = req.body;
-        db.create_post([req.session.user.id, category, item, time_posted, beginning_year, ending_year, price, description, images])
+        db.create_post([+req.session.user.id, category, item, time_posted, +beginning_year, +ending_year, +price, description, images])
         .then(() => res.status(200).send('post created'))
         .catch(err=> console.log('error in create post controller', err))
     },
@@ -26,6 +26,20 @@ module.exports={
     },
     //used as a patch to update a certain input in the user's post
     updatePost: (req, res) => {
-        const {} = req.body;
+        const db = req.app.get('db');
+        const {price, description} = req.body;
+        // console.log(req.body);
+        const {id} = req.params;
+        // console.log(req.params)
+        db.update_post([price, description, id, req.session.user.id])
+        .then(update => res.status(200).send(update))
+        .catch(err => console.log('error in update post controller', err))
+    },
+    deletePost: (req, res) => {
+        const db = req.app.get('db');
+        const {id} = req.params;
+        db.delete_post([id, req.session.user.id])
+        .then(posts => res.status(200).send(posts))
+        .catch(err => console.log('error in delete post controller', err));
     }
 }

@@ -1,0 +1,83 @@
+/* .auth{
+    color: rgb(255,224,165);
+} */
+
+.login-register{
+    font-family: 'Lobster', cursive;
+    color: rgb(255, 237, 204);
+    font-size: 80px;
+    position: relative;
+    bottom: 30%;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.89);
+}
+
+.login{
+    border-radius: 5px;
+    width: 70px;
+    font-size: 14px;
+    margin-left: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(24, 24, 24, 0.788);
+}
+
+.register{
+    border-radius: 5px;
+    font-size: 14px;
+    width: 70px;
+    margin-left: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(24, 24, 24, 0.788);
+}
+
+.logout{
+    margin-left: 10px;
+    cursor: pointer;
+    width: 70px;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(24, 24, 24, 0.788);
+}
+
+.back-to-homepage{
+    margin-left: 20px;
+}
+
+.welcome-back{
+    margin-left: 20px;
+}
+
+.signup-login{
+    margin-left: 10px;
+}
+
+.login-input{
+    margin-left: 20px;
+}
+
+.login-input > input{
+    border-radius: 5px;
+    box-shadow: 1px 1px 7px rgba(24, 24, 24, 0.856);
+}
+
+.login-link{
+    margin-left: 20px;
+}
+
+.login-sign{
+    margin-left: 20px;
+}
+
+.register-sign{
+    margin-left: 20px;
+}
+
+.signup-input{
+    margin-left: 20px;
+}
+
+.signup-input > input{
+    border-radius: 5px;
+    box-shadow: 1px 1px 7px rgba(24, 24, 24, 0.856);
+}

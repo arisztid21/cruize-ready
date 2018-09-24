@@ -32,9 +32,6 @@ create table posts(
     , images text not null
 );
 
-SELECT * FROM posts
-WHERE year > 1998 AND year < 2005;
-
 
 select * from posts;
 

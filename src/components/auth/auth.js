@@ -79,7 +79,7 @@ class Auth extends Component {
     </div>
   
       return (
-        <div>
+        <div className='auth'>
           <header className="App-header">
             <h1 className="login-register">Login/Register</h1>
           </header>
