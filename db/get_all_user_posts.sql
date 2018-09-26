@@ -1,0 +1,1 @@
+select * from posts where seller_id = $1;

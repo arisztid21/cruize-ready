@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import './Home.css';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 class Home extends Component {
   constructor(){
     super();
     this.state={
+      category: '',
+      item: '',
+      part_year: '',
       posts: []
     }
+    this.inputSearch=this.inputSearch.bind(this);
+    this.search=this.search.bind(this);
   }
   componentDidMount(){
     axios.get(`/posts`).then(res => {
@@ -16,12 +22,25 @@ class Home extends Component {
       })
     })
   }
+  search(){
+    axios.get(`/posts/search?category=${this.state.category}&item=${this.state.item}&part_year=${this.state.part_year}`)
+    .then(res => {
+      console.log('state', res.data)
+      this.setState({
+        posts: res.data
+      })
+    })
+  }
+  inputSearch(key, val){
+    this.setState({
+      [key]: val
+    })
+  }
   render() {
-    console.log(this.state.posts[0] ? this.state.posts[0].images : 'not loaded')
     const posts = this.state.posts.map(post => {
-      return <div key = {post.id}>
-        <div>{post.item}</div>
-        <img src={post.images ? post.images : 'no image found'}/>
+      return <div className="posts" key = {post.id}>
+        <Link to={`/listing/${post.id}`}><div>{post.item}</div></Link>
+        <img className='post-image' src={post.images}/>
         {/* <div>{post.description}</div> */}
         <div>${post.price}</div>
         <div>{post.time_posted}</div>
@@ -29,7 +48,21 @@ class Home extends Component {
     })
     return (
       <div className="Home">
+        <Link to='/post'>Post To Listings</Link>
+        <Link to='/profile'>Profile</Link>
+        <Link to='/login'>Login/Register</Link>
         <h1>Home</h1>
+        <select value={this.state.category} onChange={e=>this.inputSearch('category', e.target.value)}> 
+          <option value={1}>Lighting</option>
+          <option value={2}>Engine</option>
+          <option value={3}>Interior</option>
+          <option value={4}>Accessories</option>
+          <option value={5}>Wheels</option>
+          <option value='' selected >select category</option>
+        </select>
+        <input type='text' value={this.state.item} onChange={e=>this.inputSearch('item', e.target.value)} placeholder='item name'/>
+        <input type='number' value={this.state.part_year} onChange={e=>this.inputSearch('part_year', e.target.value)} placeholder='vehicle year'/>
+        <button onClick={()=>this.search()}>search</button>
         {posts}
       </div>
     );

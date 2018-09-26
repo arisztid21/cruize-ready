@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import './Post.css';
 
@@ -13,17 +13,26 @@ class Post extends Component {
       ending_year: '',
       price: '',
       description: '',
-      images: ''
+      images: '',
+      user: ''
     }
     this.inputFunction = this.inputFunction.bind(this);
     this.addNewPost=this.addNewPost.bind(this);
+  }
+  componentDidMount(){
+    axios.get('/user/info').then(response => {
+      console.log(response)
+      this.setState({
+          user: response.data
+      })
+  })
   }
   addNewPost(){
     axios.post(`/posts`, this.state).then(res => {
       console.log('hit', res.data);
       this.setState({
         state: res.data
-      })})
+      })}, alert('Your post has been added to the listings successfully!'))
       .catch(err => console.log('problem in axios post input function', err))
     }
   inputFunction(key, val){
@@ -34,8 +43,12 @@ class Post extends Component {
   render() {
     return (
       <div className="Post">
+        <Link to='/'>Home</Link>
+        <Link to='/profile'>Profile</Link>
+        <Link to='/login'>Login/Register</Link>
         <h1>Post</h1>
-        {/* <input type='text' value={this.state.category} onChange={e=>this.inputFunction('category', e.target.value)} placeholder='category'/> */}
+        {this.state.user ?
+        <div>
         <select value={this.state.category} onChange={e=>this.inputFunction('category', e.target.value)}> 
           <option value={1}>Lighting</option>
           <option value={2}>Engine</option>
@@ -51,6 +64,10 @@ class Post extends Component {
         <input type='text' value={this.state.description} onChange={e=>this.inputFunction('description', e.target.value)} placeholder='description'/>
         <input type='text' value={this.state.images} onChange={e=>this.inputFunction('images', e.target.value)} placeholder='images'/>
         <button onClick={()=>this.addNewPost()}>Create Post</button>
+        </div>
+        :
+        <div> you must login before you can post to listings</div>
+        }
       </div>
     );
   }

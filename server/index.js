@@ -43,6 +43,9 @@ app.use(session({
   app.get('/user_info', (req, res) => {
     res.json(req.session.user)
 })
+  app.get('/user/info', (req, res) => {
+    res.json(req.session.user.username)
+})
   
   app.post('/login', (req, res) => {
     const db = app.get('db');
@@ -80,13 +83,9 @@ app.patch(`/posts/:id`, c.updatePost);
 
 app.delete(`/posts/delete/:id`, c.deletePost);  
 
+app.get(`/posts/profile`, c.getAllUserPosts);
 
-
-
-
-
-
-
+app.get(`/posts/listing/:id`, c.getPostInfo);
 
 
 

@@ -1,1 +1,1 @@
-select * from posts where(category = $1 and item = %$2% and beginning_year <= $3 and ending_year >= $3); 
+SELECT * FROM posts WHERE item ILIKE ANY(ARRAY[CONCAT('%', $2, '%')]) AND beginning_year <= $3 AND ending_year >= $3 AND category = $1;

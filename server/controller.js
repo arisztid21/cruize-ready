@@ -18,20 +18,17 @@ module.exports={
     //to show all search results with the included fields
     getSearchResults: (req, res) => {
         const db = req.app.get('db');
-        // console.log(req.query)
         const {category, item, part_year} = req.query;
         db.user_posts_search([category, item, part_year])
-        .then(results => res.status(200).send(results))
+        .then(posts => res.status(200).send(posts))
         .catch(err => console.log('error in get search results controller', err))
     },
     //used as a patch to update a certain input in the user's post
     updatePost: (req, res) => {
         const db = req.app.get('db');
-        const {price, description} = req.body;
-        // console.log(req.body);
+        const {item, price, description} = req.body;
         const {id} = req.params;
-        // console.log(req.params)
-        db.update_post([price, description, id, req.session.user.id])
+        db.update_post([item, price, description, id, req.session.user.id])
         .then(update => res.status(200).send(update))
         .catch(err => console.log('error in update post controller', err))
     },
@@ -41,5 +38,20 @@ module.exports={
         db.delete_post([id, req.session.user.id])
         .then(posts => res.status(200).send(posts))
         .catch(err => console.log('error in delete post controller', err));
+    },
+    //used to get a specific users posts in his profile
+    getAllUserPosts: (req, res) => {
+        const db = req.app.get('db');
+        db.get_all_user_posts([req.session.user.id])
+        .then(posts => res.status(200).send(posts))
+        .catch(err => console.log('error in get all user posts controller', err));
+    },
+    //used to review the info of a chosen or clicked on post
+    getPostInfo: (req, res) => {
+        const db = req.app.get('db');
+        const {id} = req.params;
+        db.post_info([id])
+        .then(info => res.status(200).send(info))
+        .catch(err => console.log('error in get post info controller', err));
     }
 }

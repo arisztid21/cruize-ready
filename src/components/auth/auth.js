@@ -104,7 +104,6 @@ class Auth extends Component {
             </div>}
             {user && <div className="user-info">
               <h2 className="welcome-back">Welcome!</h2>
-              {/* <div>{ userData }</div> */}
               <Link className="back-to-homepage" to='/'>Back To HomePage</Link>
               <button className="logout" onClick={this.logout}>Log out</button>
             </div>}

@@ -1,1 +1,1 @@
-update posts set price = $1, description = $2 where id = $3 and seller_id = $4;
+update posts set item = $1, price = $2, description = $3 where id = $4 and seller_id = $5;
