@@ -63,6 +63,7 @@ class Home extends Component {
         <input type='text' value={this.state.item} onChange={e=>this.inputSearch('item', e.target.value)} placeholder='item name'/>
         <input type='number' value={this.state.part_year} onChange={e=>this.inputSearch('part_year', e.target.value)} placeholder='vehicle year'/>
         <button onClick={()=>this.search()}>search</button>
+        <a href='mailto:joshborup@gmail.com' target="_blank" >email</a>
         {posts}
       </div>
     );

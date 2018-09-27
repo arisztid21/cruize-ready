@@ -1,3 +1,5 @@
+const nodemailer = require('nodemailer');
+
 module.exports={
     //creates a post with the users id to keep track of who posted what
     createPost: (req, res) => {
@@ -5,7 +7,35 @@ module.exports={
         const time_posted = new Date().toUTCString().split(' ').splice(1, 4).join(' ');
         const {images, item, beginning_year, ending_year, description, price, category} = req.body;
         db.create_post([+req.session.user.id, category, item, time_posted, +beginning_year, +ending_year, +price, description, images])
-        .then(() => res.status(200).send('post created'))
+        .then(() =>{
+            let transporter = nodemailer.createTransport({
+              service: 'gmail',
+              auth: {
+                  user: 'no.reply.cruize.ready@gmail.com',
+                  pass: process.env.EMAIL_PASSWORD
+              }  
+            });
+
+            const mailOptions = {
+                from: 'no.reply.cruize.ready@gmail.com',
+                to: 'no.reply.cruize.ready@gmail.com',
+                subject: 'New Post: check it out',
+                html: `<body>
+                    <div>
+                        <h1>post by:${req.session.user.username}</h1>
+                        <h1>item name: ${item}</h1>
+                        <h1>description: ${description}</h1>
+                    </div>
+                </body>`
+            };
+
+            transporter.sendMail(mailOptions, function (err, info) {
+                if(err){
+                  console.log(err)
+                }else{
+                  console.log(info);
+             }});
+        })
         .catch(err=> console.log('error in create post controller', err))
     },
     //renders all and any searches to home page
