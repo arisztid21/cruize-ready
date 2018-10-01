@@ -19,26 +19,16 @@ module.exports={
 
             const mailOptions = {
                 from: 'no.reply.cruize.ready@gmail.com',
-                to: 'no.reply.cruize.ready@gmail.com',
+                to: `no.reply.cruize.ready@gmail.com`,
                 subject: 'New Post: check it out',
                 html: `<body>
                     <div>
                         <h1>post by:${req.session.user.username}</h1>
                         <h1>item name: ${item}</h1>
                         <h1>description: ${description}</h1>
+                        <h3>users email:${req.session.user.email}</h3>
                     </div>
-                </body>`
-            };
-
-            const mailOptions = {
-                from: 'no.reply.cruize.ready@gmail.com',
-                to: `${req.session.user.email}`,
-                subject: 'New Post: check it out',
-                html: `<body>
-                    <div>
-                        <p>your post has been created successfully thanks for posting on 'Cruizeready.com'. You can view your post on our website and edit, delete and manage your posts directly from your profile page. Thank you and enjoy the cruize.</p>
-                    </div>
-                </body>`
+                </body>`,
             };
 
             transporter.sendMail(mailOptions, function (err, info) {
