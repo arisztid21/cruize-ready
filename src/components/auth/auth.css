@@ -1,6 +1,3 @@
-/* .auth{
-    color: rgb(255,224,165);
-} */
 
 .login-register{
     font-family: 'Lobster', cursive;
@@ -8,27 +5,31 @@
     font-size: 80px;
     position: relative;
     bottom: 30%;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.89);
+    text-shadow: 1px 1px 5px rgb(0, 0, 0);
 }
 
 .login{
     border-radius: 5px;
     width: 70px;
-    font-size: 14px;
+    font-size: 17px;
     margin-left: 20px;
     margin-top: 10px;
     cursor: pointer;
     box-shadow: 1px 1px 5px rgba(24, 24, 24, 0.788);
+    background: linear-gradient(right, silver, white, silver, white);
+    font-family: 'Lobster', cursive;
 }
 
 .register{
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 17px;
     width: 70px;
     margin-left: 20px;
     margin-top: 10px;
     cursor: pointer;
     box-shadow: 1px 1px 5px rgba(24, 24, 24, 0.788);
+    background: linear-gradient(right, silver, white, silver, white);
+    font-family: 'Lobster', cursive;
 }
 
 .logout{
@@ -38,6 +39,8 @@
     font-size: 14px;
     border-radius: 5px;
     box-shadow: 1px 1px 5px rgba(24, 24, 24, 0.788);
+    background: linear-gradient(right, silver, white, silver, white);
+    font-family: 'Lobster', cursive;
 }
 
 .back-to-homepage{
@@ -46,6 +49,10 @@
 
 .welcome-back{
     margin-left: 20px;
+    color: rgb(255, 237, 204);
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
+    text-shadow: 1px 1px 5px rgb(0, 0, 0);
 }
 
 .signup-login{
@@ -67,10 +74,18 @@
 
 .login-sign{
     margin-left: 20px;
+    color: rgb(255, 237, 204);
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
+    text-shadow: 1px 1px 5px rgb(0, 0, 0);
 }
 
 .register-sign{
     margin-left: 20px;
+    color: rgb(255, 237, 204);
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
+    text-shadow: 1px 1px 5px rgb(0, 0, 0);
 }
 
 .signup-input{

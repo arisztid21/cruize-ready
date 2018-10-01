@@ -1,5 +1,4 @@
 .posts{
-    /* border: 1px black solid; */
     width: 400px;
     margin: auto;
     margin-top: 5px;
@@ -9,4 +8,86 @@
 
 .post-image{
     width: 260px;
+}
+
+.header{
+    background: rgb(30,174,174);
+    height: 150px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header > a{
+    background: -webkit-linear-gradient(white,silver, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Yellowtail', cursive;
+    font-size: 30px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.05);
+    position: relative;
+    top: 40%;
+    margin-right: 7px;
+}
+
+.cruize{
+    color: rgb(255, 237, 204);
+    font-family: 'Lobster', cursive;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.342);
+    font-size: 60px;
+    width: 600px;
+    position: relative;
+    bottom: 5%;
+}
+
+.logo{
+    width: 350px;
+}
+
+.search-section{
+    margin: 10px;
+}
+
+.category{
+    height: 23px;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.item-search{
+    border-radius: 1.5px;
+    border: none;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0);
+    height: 20px;
+}
+
+.item-search::placeholder{
+    font-size: 18px;
+    font-family: 'Lobster', cursive;
+}
+
+.part-year{
+    border-radius: 1.5px;
+    border: none;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0);
+    height: 20px;
+}
+
+.part-year::placeholder{
+    font-size: 18px;
+    font-family: 'Lobster', cursive;
+}
+
+.search-button{
+    height: 23px;
+    color: black;
+    background: linear-gradient(right top, silver, white, silver, white);
+    border-radius: 5px;
+    width: 50px;
+    font-size: 14px;
+    font-family: 'Lobster', cursive;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0);
+}
+
+.listing{
+    color: black;
 }

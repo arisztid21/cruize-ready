@@ -1,0 +1,119 @@
+.login-post-message{
+    color: rgb(255, 237, 204);
+    font-family: 'Lobster', cursive;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    font-size: 100px;
+    width: 800px;
+    margin-left: 350px;
+}
+
+.post-inputs{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.post-category{
+    height: 30px;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0);
+    cursor: pointer;
+    position: relative;
+    right: 300px
+}
+
+.post-item{
+    border-radius: 1.5px;
+    border: none;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0);
+    height: 30px;
+    position: relative;
+    bottom: 30px;
+    right: 170px;
+}
+
+.post-item::placeholder{
+    font-size: 18px;
+    font-family: 'Lobster', cursive;
+}
+
+.post-year-created{
+    border-radius: 1.5px;
+    border: none;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0);
+    height: 30px;
+    position: relative;
+    bottom: 62px;
+    right: 25px;
+}
+
+.post-year-created::placeholder{
+    font-size: 18px;
+    font-family: 'Lobster', cursive;
+}
+
+.post-year-ended{
+    border-radius: 1.5px;
+    border: none;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0);
+    height: 30px;
+    position: relative;
+    bottom: 94px;
+    left: 120px;
+}
+
+.post-year-ended::placeholder{
+    font-size: 16px;
+    font-family: 'Lobster', cursive;
+}
+
+.post-price{
+    border-radius: 1.5px;
+    border: none;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0);
+    height: 30px;
+    position: relative;
+    bottom: 126px;
+    left: 265px;
+}
+
+.post-price::placeholder{
+    font-size: 18px;
+    font-family: 'Lobster', cursive;
+}
+
+.post-description{
+    height: 200px;
+    width: 900px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.61);
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    bottom: 110px;
+}
+
+.post-images{
+    border-radius: 1.5px;
+    border: none;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0);
+    height: 30px;
+    position: relative;
+    bottom: 90px;
+}
+
+.post-images::placeholder{
+    font-size: 18px;
+    font-family: 'Lobster', cursive;
+}
+
+.create-post{
+    height: 23px;
+    color: black;
+    background: linear-gradient(right top, silver, white, silver, white);
+    border-radius: 5px;
+    width: 80px;
+    font-size: 14px;
+    font-family: 'Lobster', cursive;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0);
+    position: relative;
+}

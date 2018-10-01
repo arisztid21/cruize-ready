@@ -1,7 +1,8 @@
 a{
     text-decoration: none;
+    color: linear-gradient(to bottom, white 0%, silver 25%, black 50%, silver 75%, white 100%);
 }
 body{
-    background-color: rgb(200,234,255);
+    background-color: rgb(137,228,211);
     text-align: center;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import cruize from './cruize-ready-logo.png';
 import './Post.css';
 
 class Post extends Component {
@@ -43,13 +44,18 @@ class Post extends Component {
   render() {
     return (
       <div className="Post">
+      <div className='header'>
+      <img className='logo' src={cruize} alt='logo'/>
+      <div className='cruize'>
+      "Get your car Cruize Ready Today"
+      </div>
         <Link to='/'>Home</Link>
         <Link to='/profile'>Profile</Link>
         <Link to='/login'>Login/Register</Link>
-        <h1>Post</h1>
+        </div>
         {this.state.user ?
-        <div>
-        <select value={this.state.category} onChange={e=>this.inputFunction('category', e.target.value)}> 
+        <div className='post-inputs'>
+        <select className='post-category' value={this.state.category} onChange={e=>this.inputFunction('category', e.target.value)}> 
           <option value={1}>Lighting</option>
           <option value={2}>Engine</option>
           <option value={3}>Interior</option>
@@ -57,16 +63,16 @@ class Post extends Component {
           <option value={5}>Wheels</option>
           <option value='' selected >select category</option>
         </select>
-        <input type='text' value={this.state.item} onChange={e=>this.inputFunction('item', e.target.value)} placeholder='item name'/>
-        <input type='number' value={this.state.beginning_year} onChange={e=>this.inputFunction('beginning_year', e.target.value)} placeholder='year created'/>
-        <input type='number' value={this.state.ending_year} onChange={e=>this.inputFunction('ending_year', e.target.value)} placeholder='last year created'/>
-        <input type='number' value={this.state.price} onChange={e=>this.inputFunction('price', e.target.value)} placeholder='price'/>
-        <input type='text' value={this.state.description} onChange={e=>this.inputFunction('description', e.target.value)} placeholder='description'/>
-        <input type='text' value={this.state.images} onChange={e=>this.inputFunction('images', e.target.value)} placeholder='images'/>
-        <button onClick={()=>this.addNewPost()}>Create Post</button>
+        <input className='post-item' type='text' value={this.state.item} onChange={e=>this.inputFunction('item', e.target.value)} placeholder='item name'/>
+        <input className='post-year-created' type='number' value={this.state.beginning_year} onChange={e=>this.inputFunction('beginning_year', e.target.value)} placeholder='year created'/>
+        <input className='post-year-ended' type='number' value={this.state.ending_year} onChange={e=>this.inputFunction('ending_year', e.target.value)} placeholder='last year created'/>
+        <input className='post-price' type='number' value={this.state.price} onChange={e=>this.inputFunction('price', e.target.value)} placeholder='price'/>
+        <textarea className='post-description' type='text' value={this.state.description} onChange={e=>this.inputFunction('description', e.target.value)} placeholder='description'/>
+        <input className='post-images' type='text' value={this.state.images} onChange={e=>this.inputFunction('images', e.target.value)} placeholder='images'/>
+        <button className='create-post' onClick={()=>this.addNewPost()}>Create Post</button>
         </div>
         :
-        <div> you must login before you can post to listings</div>
+        <div className='login-post-message'> you must login before you can post to listings.</div>
         }
       </div>
     );

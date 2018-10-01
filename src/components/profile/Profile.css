@@ -1,0 +1,67 @@
+.login-profile-message{
+    color: rgb(255, 237, 204);
+    font-family: 'Lobster', cursive;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    font-size: 100px;
+    width: 800px;
+    margin-left: 350px;
+}
+
+.profile-post{
+    margin-top: 10px;
+}
+
+.edit-item-name{
+    width: 300px;
+    background: transparent;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.61);
+    border: none;
+    border-radius: 5px;
+    height: 20px;
+    font-family: 'Lobster', cursive;
+    font-size: 15px;
+}
+
+.edit-description{
+    height: 200px;
+    width: 300px;
+    background: transparent;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.61);
+    border: none;
+    border-radius: 5px;
+}
+
+.delete-post{
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.61);
+    background: linear-gradient(right top, silver, white, rgb(204, 204, 204), white);
+    border-radius: 5px;
+    width: 80px;
+    font-size: 14px;
+    font-family: 'Lobster', cursive;
+    margin-right: 2px;
+}
+
+.edit-post{
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.61);
+    background: linear-gradient(right top, silver, white, rgb(204, 204, 204), white);
+    border-radius: 5px;
+    width: 80px;
+    font-size: 14px;
+    font-family: 'Lobster', cursive;
+    margin-left: 2px;
+}
+
+.profile-posts{
+    margin-top: 10px;
+}
+
+.edit-price{
+    width: 295px;
+    background: transparent;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.61);
+    border: none;
+    border-radius: 5px;
+    height: 20px;
+    font-family: 'Lobster', cursive;
+    font-size: 15px;
+}

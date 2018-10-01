@@ -1,0 +1,43 @@
+.cruize-moto{
+    color: rgb(255, 237, 204);
+    font-family: 'Lobster', cursive;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.342);
+    font-size: 60px;
+    width: 520px;
+    position: relative;
+    bottom: 5%;
+}
+
+.contact-seller{
+    height: 23px;
+    background: linear-gradient(right top, silver, white, silver, white);
+    border-radius: 5px;
+    width: 100px;
+    font-size: 14px;
+    font-family: 'Lobster', cursive;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0);
+}
+
+.contact-seller > a{
+    color: black
+}
+
+.listing-item{
+    font-size: 35px;
+}
+
+.listing-price{
+    font-size: 30px;
+}
+
+.listing-description{
+    font-size: 18px
+}
+
+.listing-date{
+    font-size: 20px
+}
+
+.listing-years{
+    font-size: 23px;
+}

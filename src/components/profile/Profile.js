@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Profile.css';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import cruize from './cruize-ready-logo.png';
 
 class Profile extends Component {
   constructor(){
@@ -23,7 +24,7 @@ class Profile extends Component {
         posts: res.data
       })
     }).then(axios.get('/user/info').then(response => {
-      console.log(response)
+      // console.log(response)
       this.setState({
           user: response.data
       })
@@ -57,28 +58,33 @@ class Profile extends Component {
   }
   render() {
     const posts = this.state.posts.map(post => {
-      return <div key = {post.id}>
-        <div><input onClick={()=>this.setState({editing: true})} onChange={(e)=>this.inputFunction('item', post.id, e.target.value)} value={post.item}/></div>
-        <img src={post.images}/>
-        <div><input onClick={()=>this.setState({editing: true})} onChange={(e)=>this.inputFunction('description', post.id, e.target.value)} value={post.description}/></div>
-        <div>$<input onClick={()=>this.setState({editing: true})} onChange={(e)=>this.inputFunction('price', post.id, e.target.value)} value={post.price}/></div>
+      return <div className='profile-posts' key = {post.id}>
+        <div><input className='edit-item-name' onClick={()=>this.setState({editing: true})} onChange={(e)=>this.inputFunction('item', post.id, e.target.value)} value={post.item}/></div>
+        <img src={post.images} alt='images'/>
+        <div><textarea className='edit-description' onClick={()=>this.setState({editing: true})} onChange={(e)=>this.inputFunction('description', post.id, e.target.value)} value={post.description}/></div>
+        <div>$<input className='edit-price' onClick={()=>this.setState({editing: true})} onChange={(e)=>this.inputFunction('price', post.id, e.target.value)} value={post.price}/></div>
         <div>{post.time_posted}</div>
-        <button onClick={()=>this.deletePost(post.id)}>Delete Post</button>
-        {this.state.editing && <button onClick={()=>this.updatePost(post.id)}>Edit Post</button>}
+        <button className='delete-post' onClick={()=>this.deletePost(post.id)}>Delete Post</button>
+        {this.state.editing && <button className='edit-post' onClick={()=>this.updatePost(post.id)}>Edit Post</button>}
       </div>
     })
     return (
       <div className="Home">
+      <div className='header'>
+      <img className='logo' src={cruize} alt='logo'/>
+      <div className='cruize'>
+      "Get your car Cruize Ready Today"
+      </div>
         <Link to='/'>Home</Link>
         <Link to='/post'>Post To Listings</Link>
         <Link to='/login'>Login/Register</Link>
-        <h1>Profile</h1>
+        </div>
         { this.state.user ?
-        <div>
+        <div className='profile-post'>
         {posts}
         </div>
         :
-        <div> you must login before you can review your profile.</div>
+        <div className='login-profile-message'> you must login before you can review your profile.</div>
         }
       </div>
     );

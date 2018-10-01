@@ -87,6 +87,8 @@ app.get(`/posts/profile`, c.getAllUserPosts);
 
 app.get(`/posts/listing/:id`, c.getPostInfo);
 
+app.get(`/user_email/:seller_id`, c.getSellerEmail);
+
 
 
 

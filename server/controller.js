@@ -84,5 +84,15 @@ module.exports={
         db.post_info([id])
         .then(info => res.status(200).send(info))
         .catch(err => console.log('error in get post info controller', err));
+    },
+    //gets seller's email for buyer to contact seller
+    getSellerEmail: (req, res) => {
+        const db = req.app.get('db');
+        const {seller_id} = req.params;
+        db.find_seller_email([seller_id])
+        .then(info => {
+            res.status(200).send(info)
+        })
+        .catch(err => console.log('error in get seller email controller', err));
     }
 }

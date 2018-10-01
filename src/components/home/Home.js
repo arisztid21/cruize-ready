@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Home.css';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import cruize from './cruize-ready-logo.png';
 
 class Home extends Component {
   constructor(){
@@ -39,8 +40,8 @@ class Home extends Component {
   render() {
     const posts = this.state.posts.map(post => {
       return <div className="posts" key = {post.id}>
-        <Link to={`/listing/${post.id}`}><div>{post.item}</div></Link>
-        <img className='post-image' src={post.images}/>
+        <Link className='listing' to={`/listing/${post.id}`}><div>{post.item}</div></Link>
+        <Link className='listing' to={`/listing/${post.id}`}><img className='post-image' src={post.images} alt='images'/></Link>
         {/* <div>{post.description}</div> */}
         <div>${post.price}</div>
         <div>{post.time_posted}</div>
@@ -48,11 +49,17 @@ class Home extends Component {
     })
     return (
       <div className="Home">
+      <div className='header'>
+      <img className='logo' src={cruize} alt='logo'/>
+      <div className='cruize'>
+      "Get your car Cruize Ready Today"
+      </div>
         <Link to='/post'>Post To Listings</Link>
         <Link to='/profile'>Profile</Link>
         <Link to='/login'>Login/Register</Link>
-        <h1>Home</h1>
-        <select value={this.state.category} onChange={e=>this.inputSearch('category', e.target.value)}> 
+        </div>
+        <div className='search-section' >
+        <select className='category' value={this.state.category} onChange={e=>this.inputSearch('category', e.target.value)}> 
           <option value={1}>Lighting</option>
           <option value={2}>Engine</option>
           <option value={3}>Interior</option>
@@ -60,10 +67,10 @@ class Home extends Component {
           <option value={5}>Wheels</option>
           <option value='' selected >select category</option>
         </select>
-        <input type='text' value={this.state.item} onChange={e=>this.inputSearch('item', e.target.value)} placeholder='item name'/>
-        <input type='number' value={this.state.part_year} onChange={e=>this.inputSearch('part_year', e.target.value)} placeholder='vehicle year'/>
-        <button onClick={()=>this.search()}>search</button>
-        <a href='mailto:joshborup@gmail.com' target="_blank" >email</a>
+        <input className='item-search' type='text' value={this.state.item} onChange={e=>this.inputSearch('item', e.target.value)} placeholder='item name'/>
+        <input className='part-year' type='number' value={this.state.part_year} onChange={e=>this.inputSearch('part_year', e.target.value)} placeholder='vehicle year'/>
+        <button className='search-button' onClick={()=>this.search()}>Search</button>
+        </div>
         {posts}
       </div>
     );
