@@ -40,11 +40,11 @@ class Home extends Component {
   render() {
     const posts = this.state.posts.map(post => {
       return <div className="posts" key = {post.id}>
-        <Link className='listing' to={`/listing/${post.id}`}><div>{post.item}</div></Link>
-        <Link className='listing' to={`/listing/${post.id}`}><img className='post-image' src={post.images} alt='images'/></Link>
+        <Link className='post-listing-item' to={`/listing/${post.id}`}><div>{post.item}</div></Link>
+        <Link className='post-listing-image' to={`/listing/${post.id}`}><img className='post-image' src={post.images} alt='images'/></Link>
         {/* <div>{post.description}</div> */}
-        <div>${post.price}</div>
-        <div>{post.time_posted}</div>
+        <div className='post-listing-price'>${post.price}</div>
+        <div className='post-listing-date'>{post.time_posted}</div>
       </div>
     })
     return (
@@ -67,11 +67,13 @@ class Home extends Component {
           <option value={5}>Wheels</option>
           <option value='' selected >select category</option>
         </select>
-        <input className='item-search' type='text' value={this.state.item} onChange={e=>this.inputSearch('item', e.target.value)} placeholder='item name'/>
+        <input className='item-search' className='item-search' type='text' value={this.state.item} onChange={e=>this.inputSearch('item', e.target.value)} placeholder='item name'/>
         <input className='part-year' type='number' value={this.state.part_year} onChange={e=>this.inputSearch('part_year', e.target.value)} placeholder='vehicle year'/>
         <button className='search-button' onClick={()=>this.search()}>Search</button>
         </div>
+        <div className='posts-container'>
         {posts}
+        </div>
       </div>
     );
   }

@@ -60,7 +60,7 @@ class Profile extends Component {
     const posts = this.state.posts.map(post => {
       return <div className='profile-posts' key = {post.id}>
         <div><input className='edit-item-name' onClick={()=>this.setState({editing: true})} onChange={(e)=>this.inputFunction('item', post.id, e.target.value)} value={post.item}/></div>
-        <img src={post.images} alt='images'/>
+        <div className='profile-images'><img src={post.images} alt='images'/></div>
         <div><textarea className='edit-description' onClick={()=>this.setState({editing: true})} onChange={(e)=>this.inputFunction('description', post.id, e.target.value)} value={post.description}/></div>
         <div>$<input className='edit-price' onClick={()=>this.setState({editing: true})} onChange={(e)=>this.inputFunction('price', post.id, e.target.value)} value={post.price}/></div>
         <div>{post.time_posted}</div>

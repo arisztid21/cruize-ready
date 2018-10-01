@@ -26,9 +26,8 @@ module.exports={
                         <h1>post by:${req.session.user.username}</h1>
                         <h1>item name: ${item}</h1>
                         <h1>description: ${description}</h1>
-                        <h3>users email:${req.session.user.email}</h3>
                     </div>
-                </body>`,
+                </body>`
             };
 
             transporter.sendMail(mailOptions, function (err, info) {

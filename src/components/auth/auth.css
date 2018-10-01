@@ -96,3 +96,62 @@
     border-radius: 5px;
     box-shadow: 1px 1px 7px rgba(24, 24, 24, 0.856);
 }
+
+@media (max-width: 400px) {
+    .login-register{
+        font-family: 'Lobster', cursive;
+        color: rgb(255, 237, 204);
+        font-size:60px;
+        position: relative;
+        bottom: 30%;
+        text-shadow: 1px 1px 5px rgb(0, 0, 0);
+    }
+
+    .login-sign{
+        margin-left: 20px;
+        color: rgb(255, 237, 204);
+        font-family: 'Lobster', cursive;
+        font-size: 30px;
+        text-shadow: 1px 1px 5px rgb(0, 0, 0);
+    }
+    
+    .login-input{
+        margin-left: 90px;
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        text-align: center;
+    }
+    
+    .login-input > input{
+        border-radius: 5px;
+        box-shadow: 1px 1px 7px rgba(24, 24, 24, 0.856);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 18px;
+    }
+
+    .register-sign{
+        margin-left: 20px;
+        color: rgb(255, 237, 204);
+        font-family: 'Lobster', cursive;
+        font-size: 30px;
+        text-shadow: 1px 1px 5px rgb(0, 0, 0);
+    }
+
+    .signup-input{
+        margin-left: 110px;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        text-align: center;
+    }
+
+    .signup-input > input{
+        border-radius: 5px;
+        box-shadow: 1px 1px 7px rgba(24, 24, 24, 0.856);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 18px;
+    }
+}

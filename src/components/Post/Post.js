@@ -55,6 +55,7 @@ class Post extends Component {
         </div>
         {this.state.user ?
         <div className='post-inputs'>
+        <div className='post-top-inputs'>
         <select className='post-category' value={this.state.category} onChange={e=>this.inputFunction('category', e.target.value)}> 
           <option value={1}>Lighting</option>
           <option value={2}>Engine</option>
@@ -67,8 +68,9 @@ class Post extends Component {
         <input className='post-year-created' type='number' value={this.state.beginning_year} onChange={e=>this.inputFunction('beginning_year', e.target.value)} placeholder='year created'/>
         <input className='post-year-ended' type='number' value={this.state.ending_year} onChange={e=>this.inputFunction('ending_year', e.target.value)} placeholder='last year created'/>
         <input className='post-price' type='number' value={this.state.price} onChange={e=>this.inputFunction('price', e.target.value)} placeholder='price'/>
-        <textarea className='post-description' type='text' value={this.state.description} onChange={e=>this.inputFunction('description', e.target.value)} placeholder='description'/>
-        <input className='post-images' type='text' value={this.state.images} onChange={e=>this.inputFunction('images', e.target.value)} placeholder='images'/>
+        </div>
+        <div className='post-description-input'><textarea className='post-description' type='text' value={this.state.description} onChange={e=>this.inputFunction('description', e.target.value)} placeholder='description'/></div>
+        <div className='post-images-input'><input className='post-images' type='text' value={this.state.images} onChange={e=>this.inputFunction('images', e.target.value)} placeholder='images'/></div>
         <button className='create-post' onClick={()=>this.addNewPost()}>Create Post</button>
         </div>
         :

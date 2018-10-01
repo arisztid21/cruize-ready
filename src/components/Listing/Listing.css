@@ -41,3 +41,15 @@
 .listing-years{
     font-size: 23px;
 }
+
+@media (max-width: 400px) {
+    .cruize-moto{
+        color: rgb(255, 237, 204);
+        font-family: 'Lobster', cursive;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.342);
+        font-size: 17px;
+        width: 520px;
+        position: relative;
+        top: 5%;
+    }
+}

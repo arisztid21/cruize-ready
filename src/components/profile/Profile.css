@@ -7,25 +7,28 @@
     margin-left: 350px;
 }
 
-.profile-post{
-    margin-top: 10px;
+.profile-images{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin: 1em 0;
 }
 
 .edit-item-name{
     width: 300px;
-    background: transparent;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.61);
     border: none;
     border-radius: 5px;
     height: 20px;
     font-family: 'Lobster', cursive;
     font-size: 15px;
+    margin-top: 10px;
 }
 
 .edit-description{
     height: 200px;
     width: 300px;
-    background: transparent;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.61);
     border: none;
     border-radius: 5px;
@@ -51,17 +54,23 @@
     margin-left: 2px;
 }
 
-.profile-posts{
-    margin-top: 10px;
-}
-
 .edit-price{
     width: 295px;
-    background: transparent;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.61);
     border: none;
     border-radius: 5px;
     height: 20px;
     font-family: 'Lobster', cursive;
     font-size: 15px;
+}
+
+@media (max-width: 400px) {
+    .login-profile-message{
+        color: rgb(255, 237, 204);
+        font-family: 'Lobster', cursive;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        font-size: 50px;
+        width: 350px;
+        margin: auto
+    }
 }

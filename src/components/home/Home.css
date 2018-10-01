@@ -4,10 +4,20 @@
     margin-top: 5px;
     box-shadow: .5px .5px 3px rgba(0, 0, 0, 0.50);
     border-radius: 4px;
+    height: 50vh;
+    padding: 1em;
 }
 
 .post-image{
-    width: 260px;
+    width: 20em;
+    height: 20em;
+}
+
+.posts-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap
 }
 
 .header{
@@ -51,6 +61,7 @@
     height: 23px;
     box-shadow: 1px 1px 5px rgb(0, 0, 0);
     cursor: pointer;
+    margin-right: 5.5px;
 }
 
 .item-search{
@@ -58,6 +69,7 @@
     border: none;
     box-shadow: 1px 1px 5px rgb(0, 0, 0);
     height: 20px;
+    margin-right: 5.5px;
 }
 
 .item-search::placeholder{
@@ -70,6 +82,7 @@
     border: none;
     box-shadow: 1px 1px 5px rgb(0, 0, 0);
     height: 20px;
+    margin-right: 5.5px;
 }
 
 .part-year::placeholder{
@@ -88,6 +101,119 @@
     box-shadow: 1px 1px 5px rgb(0, 0, 0);
 }
 
-.listing{
+.post-listing-item, .post-listing-image{
     color: black;
+}
+
+.post-listing-item{
+    font-size: 26px;
+    font-family: 'Lobster', cursive;
+}
+
+.post-listing-price{
+    font-size: 26px;
+    font-family: 'Lobster', cursive;
+}
+
+.post-listing-date{
+    font-size: 26px;
+    font-family: 'Lobster', cursive;
+}
+
+@media (max-width: 400px) {
+    .posts{
+        width: 90%;
+        margin: auto;
+        margin-top: 5px;
+        box-shadow: .5px .5px 3px rgba(0, 0, 0, 0.50);
+        border-radius: 4px;
+    }
+
+    .header{
+        background: rgb(30,174,174);
+        height: 75px;
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .cruize{
+        color: rgb(255, 237, 204);
+        font-family: 'Lobster', cursive;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.342);
+        font-size: 17px;
+        width: 100px;
+        position: relative;
+        top: 5%;
+    }
+
+    .logo{
+        width: 120px;
+    }
+
+    .header > a{
+        background: -webkit-linear-gradient(white,silver, white);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Yellowtail', cursive;
+        font-size: 10px;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.05);
+        position: relative;
+        top: 40%;
+    }
+
+    .post-image{
+        width: 15em;
+        height: 15em;
+    }
+
+    .search-section{
+        margin: 10px;
+    }
+    
+    .category{
+        height: 23px;
+        box-shadow: 1px 1px 5px rgb(0, 0, 0);
+        cursor: pointer;
+        margin-right: 5px;
+    }
+    
+    .item-search{
+        border-radius: 1.5px;
+        border: none;
+        box-shadow: 1px 1px 5px rgb(0, 0, 0);
+        height: 20px;
+        width: 100px;
+        margin-right: 5px;
+    }
+    
+    .item-search::placeholder{
+        font-size: 18px;
+        font-family: 'Lobster', cursive;
+    }
+    
+    .part-year{
+        border-radius: 1.5px;
+        border: none;
+        box-shadow: 1px 1px 5px rgb(0, 0, 0);
+        height: 20px;
+        width: 90px;
+        margin-right: 5px;
+    }
+    
+    .part-year::placeholder{
+        font-size: 18px;
+        font-family: 'Lobster', cursive;
+    }
+    
+    .search-button{
+        height: 23px;
+        color: black;
+        background: linear-gradient(right top, silver, white, silver, white);
+        border-radius: 5px;
+        width: 50px;
+        font-size: 14px;
+        font-family: 'Lobster', cursive;
+        box-shadow: 1px 1px 5px rgb(0, 0, 0);
+    }
 }
