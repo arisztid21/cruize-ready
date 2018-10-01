@@ -64,7 +64,7 @@
     font-size: 15px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
     .login-profile-message{
         color: rgb(255, 237, 204);
         font-family: 'Lobster', cursive;

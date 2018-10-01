@@ -120,7 +120,7 @@
     font-family: 'Lobster', cursive;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
     .posts{
         width: 90%;
         margin: auto;

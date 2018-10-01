@@ -97,7 +97,7 @@
     box-shadow: 1px 1px 7px rgba(24, 24, 24, 0.856);
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
     .login-register{
         font-family: 'Lobster', cursive;
         color: rgb(255, 237, 204);
