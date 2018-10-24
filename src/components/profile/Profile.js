@@ -81,6 +81,7 @@ class Profile extends Component {
         </div>
         { this.state.user ?
         <div className='profile-post'>
+        <div>Welcome to your profile {this.state.user}!</div>
         {posts}
         </div>
         :

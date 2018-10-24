@@ -42,7 +42,6 @@ class Home extends Component {
       return <div className="posts" key = {post.id}>
         <Link className='post-listing-item' to={`/listing/${post.id}`}><div>{post.item}</div></Link>
         <Link className='post-listing-image' to={`/listing/${post.id}`}><img className='post-image' src={post.images} alt='images'/></Link>
-        {/* <div>{post.description}</div> */}
         <div className='post-listing-price'>${post.price}</div>
         <div className='post-listing-date'>{post.time_posted}</div>
       </div>
