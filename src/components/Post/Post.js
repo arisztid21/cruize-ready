@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import cruize from './cruize-ready-logo.png';
+import Dropzone from 'react-dropzone';
 import './Post.css';
 
-class Post extends Component {
+const CLOUDINARY_UPLOAD_PRESET = 'cruizeready';
+const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/arisztid21/image/upload'
+
+export default class Post extends Component {
   constructor(){
     super ();
     this.state={
@@ -19,6 +23,7 @@ class Post extends Component {
     }
     this.inputFunction = this.inputFunction.bind(this);
     this.addNewPost=this.addNewPost.bind(this);
+    // this.handleImageUpload=this.handleImageUpload.bind(this);
   }
   componentDidMount(){
     axios.get('/user/info').then(response => {
@@ -28,6 +33,24 @@ class Post extends Component {
       })
   })
   }
+
+  handleImageUpload = (file) => {
+    axios.get('/api/upload').then(response => {
+        let formData = new FormData();
+        formData.append('signature', response.data.signature)
+        formData.append('api_key', '774296625574526')
+        formData.append('timestamp', response.data.timestamp)
+        formData.append('file', file[0]);
+        console.log(response.data)
+        axios.post(CLOUDINARY_UPLOAD_URL, formData).then(image => {
+            console.log('cloud response----',image)
+                this.setState({
+                    images: image.data.secure_url
+                })
+    }, alert('Please wait as your preview image is rendered. This may take 5-10 seconds.'))
+    }).catch(err => console.log('problem with uploading image file', err))
+}
+
   addNewPost(){
     axios.post(`/posts`, this.state).then(res => {
       console.log('hit', res.data);
@@ -36,11 +59,13 @@ class Post extends Component {
       })}, alert('Your post has been added to the listings successfully!'))
       .catch(err => console.log('problem in axios post input function', err))
     }
+
   inputFunction(key, val){
     this.setState({
       [key]: val
     })
   }
+
   render() {
     return (
       <div className="Post">
@@ -70,15 +95,23 @@ class Post extends Component {
         <input className='post-price' type='number' value={this.state.price} onChange={e=>this.inputFunction('price', e.target.value)} placeholder='price'/>
         </div>
         <div className='post-description-input'><textarea className='post-description' type='text' value={this.state.description} onChange={e=>this.inputFunction('description', e.target.value)} placeholder='description'/></div>
-        <div className='post-images-input'><input className='post-images' type='text' value={this.state.images} onChange={e=>this.inputFunction('images', e.target.value)} placeholder='images'/></div>
+        {/* <div className='post-images-input'><input className='post-images' type='text' value={this.state.images} onChange={e=>this.inputFunction('images', e.target.value)} placeholder='images'/></div> */}
+        <div className='dropzone-image'>preview image here<div><img className='dropzone-image-preview' src={this.state.images}/></div></div>
+        <div className='dropzone'>
+        <Dropzone
+          multiple = {false}
+          accept = 'image/*'
+          onDrop={this.handleImageUpload}
+        >
+          <p classname='dropzone-text'>Upload Your Image Here</p>
+        </Dropzone>
+        </div>
         <button className='create-post' onClick={()=>this.addNewPost()}>Create Post</button>
         </div>
         :
-        <div className='login-post-message'> you must login before you can post to listings.</div>
+        <div className='login-post-message'> You must login before you can post to listings.</div>
         }
       </div>
     );
   }
 }
-
-export default Post;

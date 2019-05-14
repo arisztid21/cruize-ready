@@ -14,6 +14,7 @@ class Listing extends Component{
         }
     }
     componentDidMount(){
+        console.log('routes shit', this.props)
         axios.get(`/posts/listing/${this.props.match.params.id}`).then(res => {
             console.log('post.sellerID',res.data[0].seller_id)
             axios.get(`/user_email/${+res.data[0].seller_id}`).then(response => {
@@ -37,7 +38,7 @@ class Listing extends Component{
                 <div key={e.id}>
                     <div className='listing-item'>{e.item}</div>
                     <div className='listing-price'>${e.price}</div>
-                    <img src={e.images} alt='images'/>
+                    <img className='listing-image' src={e.images} alt='images'/>
                     <div className='listing-description'>{e.description}</div>
                     <div className='listing-date'>{e.time_posted}</div>
                     <div className='listing-years'>fits from:{e.beginning_year} to:{e.ending_year}</div>

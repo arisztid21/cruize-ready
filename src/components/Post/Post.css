@@ -104,6 +104,27 @@
     margin-top: 10px;
 }
 
+.dropzone{
+    color: rgb(255, 237, 204);
+    font-family: 'Lobster', cursive;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    font-size: 30px;
+    margin-left: 630px;
+}
+
+.dropzone-image{
+    color: rgb(255, 237, 204);
+    font-family: 'Lobster', cursive;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    font-size: 25px;
+}
+
+.dropzone-image-preview{
+    height: 400px;
+    width: 400px;
+    /* margin-left: 600px; */
+}
+
 @media(max-width: 600px) {
     .login-post-message{
         color: rgb(255, 237, 204);

@@ -9,8 +9,8 @@
 }
 
 .post-image{
-    width: 20em;
-    height: 20em;
+    width: 22em;
+    height: 22em;
 }
 
 .posts-container{
@@ -37,6 +37,7 @@
     position: relative;
     top: 40%;
     margin-right: 7px;
+    height: 85px
 }
 
 .cruize{
@@ -160,6 +161,7 @@
         text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.05);
         position: relative;
         top: 40%;
+        height: 40px;
     }
 
     .post-image{

@@ -1,5 +1,6 @@
 require('dotenv').config();
 const nodemailer = require('nodemailer');
+const cloudinary = require('cloudinary');
 
 module.exports={
     //creates a post with the users id to keep track of who posted what
@@ -94,5 +95,20 @@ module.exports={
             res.status(200).send(info)
         })
         .catch(err => console.log('error in get seller email controller', err));
-    }
+    },
+    //allows to post images to cloudinary
+    get_photos: (req, res) => {
+        const timestamp = Math.round((new Date()).getTime() / 1000);
+    
+        const api_secret = process.env.CLOUDINARY_SECRET_API;
+    
+        const signature = cloudinary.utils.api_sign_request({timestamp: timestamp}, api_secret);
+    
+        const payload = {
+          signature: signature,
+          timestamp: timestamp
+        };
+        console.log(payload);
+        res.send(payload);
+      }
 }

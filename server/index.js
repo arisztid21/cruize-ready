@@ -89,7 +89,7 @@ app.get(`/posts/listing/:id`, c.getPostInfo);
 
 app.get(`/user_email/:seller_id`, c.getSellerEmail);
 
-
+app.get('/api/upload', c.get_photos)
 
 
 
